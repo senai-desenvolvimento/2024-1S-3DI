@@ -34,3 +34,11 @@ Chegou a hora de brilhar! ✨ Construa e apresente o seu projeto final aplicando
 Contribua com ideias, melhorias ou até mesmo relatando problemas! Vamos crescer juntos. 💡  
 
 **Faça parte da história dessa turma!** 👩‍💻👨‍💻  
+
+---
+
+## ❤️ Feito com Carinho  
+Este repositório foi elaborado com muito carinho por **Carlos Roque** e **Samanta**. 💖  
+
+
+
