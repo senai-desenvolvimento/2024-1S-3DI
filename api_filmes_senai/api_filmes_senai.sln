@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api_filmes_senai", "api_filmes_senai.csproj", "{70F4642D-B6B6-419D-BA7E-C297A777076F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70F4642D-B6B6-419D-BA7E-C297A777076F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70F4642D-B6B6-419D-BA7E-C297A777076F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70F4642D-B6B6-419D-BA7E-C297A777076F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70F4642D-B6B6-419D-BA7E-C297A777076F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
