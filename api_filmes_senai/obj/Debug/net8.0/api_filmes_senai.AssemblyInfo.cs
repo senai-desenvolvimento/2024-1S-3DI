@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("api_filmes_senai")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+619a917bde97c8ac8f7b47d6317bc36b482d6756")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+342f3cff7acde1f40eab8ba8ad288517102973b1")]
 [assembly: System.Reflection.AssemblyProductAttribute("api_filmes_senai")]
 [assembly: System.Reflection.AssemblyTitleAttribute("api_filmes_senai")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

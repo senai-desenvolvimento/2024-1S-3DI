@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "Contexts\\Filmes_Context.cs",
               "ToolTip": "C:\\Users\\SN1074908\\Desktop\\2024-1S-3DI\\api_filmes_senai\\Contexts\\Filmes_Context.cs",
               "RelativeToolTip": "Contexts\\Filmes_Context.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAYwBgAAACHAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAwwBgAAACHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-27T14:54:31.651Z",
               "EditorCaption": ""
@@ -47,8 +47,7 @@
               "RelativeToolTip": "Repositories\\FilmeRepository.cs",
               "ViewState": "AgIAAF8AAAAAAAAAAAAqwIMAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T16:38:15.271Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-25T16:38:15.271Z"
             },
             {
               "$type": "Document",
