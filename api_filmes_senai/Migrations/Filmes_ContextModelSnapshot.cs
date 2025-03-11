@@ -57,6 +57,33 @@ namespace api_filmes_senai.Migrations
                     b.ToTable("Genero");
                 });
 
+            modelBuilder.Entity("api_filmes_senai.Domains.Usuario", b =>
+                {
+                    b.Property<Guid>("IdUsuario")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasMaxLength(60)
+                        .HasColumnType("VARCHAR(60)");
+
+                    b.HasKey("IdUsuario");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
+
+                    b.ToTable("Usuario");
+                });
+
             modelBuilder.Entity("api_filmes_senai.Domains.Filme", b =>
                 {
                     b.HasOne("api_filmes_senai.Domains.Genero", "Genero")

@@ -1,5 +1,6 @@
 ﻿using api_filmes_senai.Domains;
 using api_filmes_senai.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api_filmes_senai.Controllers
@@ -15,6 +16,10 @@ namespace api_filmes_senai.Controllers
             _generoRepository = generoRepository;
         }
 
+        /// <summary>
+        /// Endpoint para listar todos os gêneros
+        /// </summary>
+        /// <returns>Lista de Gêneros</returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -28,6 +33,12 @@ namespace api_filmes_senai.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint para cadastrar um novo gênero
+        /// </summary>
+        /// <param name="novoGenero">Gênero a ser cadastrado</param>
+        /// <returns>Status code 201</returns>
+        [Authorize]
         [HttpPost]
         public IActionResult Post(Genero novoGenero)
         {
@@ -43,6 +54,11 @@ namespace api_filmes_senai.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint para buscar um gênero pelo seu id
+        /// </summary>
+        /// <param name="id">Id do Gênero buscado</param>
+        /// <returns>Gênero Buscado</returns>
         [HttpGet("BuscarPorId/{id}")]
         public IActionResult GetById(Guid id)
         {
@@ -58,6 +74,12 @@ namespace api_filmes_senai.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint para excluir um gênero
+        /// </summary>
+        /// <param name="id">Id do Gênero a ser excluído</param>
+        /// <returns>Status Code 204</returns>
+        [Authorize]
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
@@ -73,6 +95,13 @@ namespace api_filmes_senai.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint para atualizar um gênero
+        /// </summary>
+        /// <param name="id">Id do gênero a ser atualizado</param>
+        /// <param name="genero">Objeto com os dados atualizados</param>
+        /// <returns>Status code 201</returns>
+        [Authorize]
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, Genero genero)
         {

@@ -1,0 +1,515 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API de Filmes",
+    "description": "Aplicação para gerenciamento de filmes e Gêneros",
+    "termsOfService": "https://example.com/terms",
+    "contact": {
+      "name": "Carlos Roque",
+      "url": "https://www.linkedin.com/in/roquecarlos/"
+    },
+    "license": {
+      "name": "Example License",
+      "url": "https://example.com/license"
+    },
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Filme": {
+      "get": {
+        "tags": [
+          "Filme"
+        ],
+        "summary": "Endpoint para listar todos os filmes",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Filme"
+        ],
+        "summary": "Endpoint para cadastrar um novo filme",
+        "requestBody": {
+          "description": "Filme a ser cadastrado",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Filme"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Filme"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Filme"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Filme/BuscarPorId/{id}": {
+      "get": {
+        "tags": [
+          "Filme"
+        ],
+        "summary": "Endpoint para buscar um filme pelo id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do filme a ser buscado",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Filme/{id}": {
+      "put": {
+        "tags": [
+          "Filme"
+        ],
+        "summary": "Endpoint para atualizar um filme",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do filme a ser atualizado",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Filme com dados atualizados",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Filme"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Filme"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Filme"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Filme"
+        ],
+        "summary": "Endpoint para excluir um filme",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do filme a ser excluído",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Filme/ListarPorGenero/{id}": {
+      "get": {
+        "tags": [
+          "Filme"
+        ],
+        "summary": "Endpoint para filtrar os filmes pelo seu gênero",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do gênero",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Genero": {
+      "get": {
+        "tags": [
+          "Genero"
+        ],
+        "summary": "Endpoint para listar todos os gêneros",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Genero"
+        ],
+        "summary": "Endpoint para cadastrar um novo gênero",
+        "requestBody": {
+          "description": "Gênero a ser cadastrado",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Genero"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Genero"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Genero"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Genero/BuscarPorId/{id}": {
+      "get": {
+        "tags": [
+          "Genero"
+        ],
+        "summary": "Endpoint para buscar um gênero pelo seu id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do Gênero buscado",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Genero/{id}": {
+      "delete": {
+        "tags": [
+          "Genero"
+        ],
+        "summary": "Endpoint para excluir um gênero",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do Gênero a ser excluído",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Genero"
+        ],
+        "summary": "Endpoint para atualizar um gênero",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do gênero a ser atualizado",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Objeto com os dados atualizados",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Genero"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Genero"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Genero"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Login": {
+      "post": {
+        "tags": [
+          "Login"
+        ],
+        "summary": "Endpoint para realizar a autenticação (Login)",
+        "requestBody": {
+          "description": "Email e senha do usuário",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Usuario": {
+      "post": {
+        "tags": [
+          "Usuario"
+        ],
+        "summary": "Endpoint para cadastrar usuário",
+        "requestBody": {
+          "description": "Usuário a ser cadastrado",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Usuario/{id}": {
+      "get": {
+        "tags": [
+          "Usuario"
+        ],
+        "summary": "Endpoint para buscar um usuário por id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do usuário a ser buscado",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Filme": {
+        "required": [
+          "titulo"
+        ],
+        "type": "object",
+        "properties": {
+          "idFilme": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "titulo": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "idGenero": {
+            "type": "string",
+            "description": "Referência da tabela Genero",
+            "format": "uuid"
+          },
+          "genero": {
+            "$ref": "#/components/schemas/Genero"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Genero": {
+        "required": [
+          "nome"
+        ],
+        "type": "object",
+        "properties": {
+          "idGenero": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nome": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginDTO": {
+        "required": [
+          "email",
+          "senha"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "senha": {
+            "maxLength": 60,
+            "minLength": 6,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Usuario": {
+        "required": [
+          "email",
+          "nome",
+          "senha"
+        ],
+        "type": "object",
+        "properties": {
+          "idUsuario": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nome": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "email": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "senha": {
+            "maxLength": 60,
+            "minLength": 6,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "Value: Bearer TokenJWT ",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}
