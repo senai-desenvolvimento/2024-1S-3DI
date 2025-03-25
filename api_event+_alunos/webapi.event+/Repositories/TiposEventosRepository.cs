@@ -4,7 +4,7 @@ using webapi.event_.Interfaces;
 
 namespace webapi.event_.Repositories
 {
-    public class TiposEventosRepository : ITiposUsuariosRepository
+    public class TiposEventosRepository : ITiposEventosRepository
     {
 
         private readonly Context _context;
@@ -13,18 +13,19 @@ namespace webapi.event_.Repositories
         {
             _context = context;
         }
-        public void Atualizar(Guid id, TiposUsuarios tipoUsuario)
+
+        public void Atualizar(Guid id, TiposEventos tipoEvento)
         {
             try
             {
-                TiposUsuarios tipoBuscado = _context.TiposUsuarios.Find(id)!;
+                TiposEventos tipoBuscado = _context.TiposEventos.Find(id)!;
 
                 if (tipoBuscado != null)
                 {
-                    tipoBuscado.TituloTipoUsuario = tipoUsuario.TituloTipoUsuario;
+                    tipoBuscado.TituloTipoEvento = tipoEvento.TituloTipoEvento;
                 }
 
-                _context.TiposUsuarios.Update(tipoBuscado!);
+                _context.TiposEventos.Update(tipoBuscado!);
 
                 _context.SaveChanges();
             }
@@ -34,11 +35,11 @@ namespace webapi.event_.Repositories
             }
         }
 
-        public TiposUsuarios BuscarPorId(Guid id)
+        public TiposEventos BuscarPorId(Guid id)
         {
             try
             {
-                return _context.TiposUsuarios.Find(id)!;
+                return _context.TiposEventos.Find(id)!;
             }
             catch (Exception)
             {
@@ -46,13 +47,13 @@ namespace webapi.event_.Repositories
             }
         }
 
-        public void Cadastrar(TiposUsuarios tipoUsuario)
+        public void Cadastrar(TiposEventos tipoEvento)
         {
             try
             {
-                tipoUsuario.IdTipoUsuario = Guid.NewGuid();
+                tipoEvento.IdTipoEvento = Guid.NewGuid();
 
-                _context.TiposUsuarios.Add(tipoUsuario);
+                _context.TiposEventos.Add(tipoEvento);
 
                 _context.SaveChanges();
             }
@@ -66,11 +67,11 @@ namespace webapi.event_.Repositories
         {
             try
             {
-                TiposUsuarios tipoBuscado = _context.TiposUsuarios.Find(id)!;
+                TiposEventos tipoBuscado = _context.TiposEventos.Find(id)!;
 
                 if (tipoBuscado != null)
                 {
-                    _context.TiposUsuarios.Remove(tipoBuscado);
+                    _context.TiposEventos.Remove(tipoBuscado);
                 }
 
                 _context.SaveChanges();
@@ -81,11 +82,13 @@ namespace webapi.event_.Repositories
             }
         }
 
-        public List<TiposUsuarios> Listar()
+        public List<TiposEventos> Listar()
         {
             try
             {
-                return _context.TiposUsuarios.ToList();
+                return _context.TiposEventos
+                    .OrderBy(tp => tp.TituloTipoEvento)
+                    .ToList();
             }
             catch (Exception)
             {
