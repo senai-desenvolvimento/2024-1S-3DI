@@ -174,3 +174,5 @@ C:\Users\SN1074908\Desktop\2024-1S-3DI-Professor\Sprint 1\API\api_event+_alunos\
 C:\Users\SN1074908\Desktop\2024-1S-3DI-Professor\Sprint 1\API\api_event+_alunos\webapi.event+\obj\Debug\net8.0\webapi.event+.pdb
 C:\Users\SN1074908\Desktop\2024-1S-3DI-Professor\Sprint 1\API\api_event+_alunos\webapi.event+\obj\Debug\net8.0\webapi.event+.genruntimeconfig.cache
 C:\Users\SN1074908\Desktop\2024-1S-3DI-Professor\Sprint 1\API\api_event+_alunos\webapi.event+\obj\Debug\net8.0\ref\webapi.event+.dll
+C:\Users\SN1074908\Desktop\2024-1S-3DI-Professor\Sprint 1\API\api_event+_alunos\webapi.event+\bin\Debug\net8.0\webapi.event+.xml
+C:\Users\SN1074908\Desktop\2024-1S-3DI-Professor\Sprint 1\API\api_event+_alunos\webapi.event+\obj\Debug\net8.0\webapi.event+.xml

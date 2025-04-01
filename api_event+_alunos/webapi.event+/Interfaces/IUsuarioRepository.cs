@@ -1,4 +1,5 @@
 ﻿using webapi.event_.Domains;
+using webapi.event_.DTO;
 
 namespace webapi.event_.Interfaces
 {
