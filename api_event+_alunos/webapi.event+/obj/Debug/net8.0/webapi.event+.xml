@@ -4,6 +4,13 @@
         <name>webapi.event+</name>
     </assembly>
     <members>
+        <member name="M:webapi.event_.Controllers.ComentariosEventosController.Delete(System.Guid)">
+            <summary>
+            Enpoint da API que faz a chamada para o método de deletar um comentário
+            </summary>
+            <param name="id">Id do comentário a ser deletado</param>
+            <returns>Status code</returns>
+        </member>
         <member name="T:webapi.event_.Migrations.db_v1">
             <inheritdoc />
         </member>

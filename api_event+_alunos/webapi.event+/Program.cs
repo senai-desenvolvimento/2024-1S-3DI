@@ -1,3 +1,5 @@
+using Azure.AI.ContentSafety;
+using Azure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -7,6 +9,25 @@ using webapi.event_.Interfaces;
 using webapi.event_.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Configuração do Azure Content Safety sem variáveis de ambiente
+//var endpoint = "https://moderatorservice.cognitiveservices.azure.com/";
+//var apiKey = "6F59xOioGcV9aN1jnUL2LXe9eTGO32E5J8rNeSoZ235FMvzZ86F0JQQJ99BDACYeBjFXJ3w3AAAHACOGpfCS";
+//var client = new ContentSafetyClient(new Uri(endpoint), new AzureKeyCredential(apiKey));
+//builder.Services.AddSingleton(client);
+
+// Configuração do Azure Content Safety com variáveis de ambiente
+var endpoint = builder.Configuration["AzureContentSafety:Endpoint"];
+var apiKey = builder.Configuration["AzureContentSafety:ApiKey"];
+
+
+if (string.IsNullOrEmpty(endpoint) || string.IsNullOrEmpty(apiKey))
+{
+    throw new InvalidOperationException("Azure Content Safety: Endpoint ou API Key não foram configurados.");
+}
+
+var client = new ContentSafetyClient(new Uri(endpoint), new AzureKeyCredential(apiKey));
+builder.Services.AddSingleton(client);
 
 builder.Services // Acessa a coleção de serviços da aplicação (Dependency Injection)
     .AddControllers() // Adiciona suporte a controladores na API (MVC ou Web API)
@@ -29,6 +50,8 @@ builder.Services.AddScoped<ITiposEventosRepository, TiposEventosRepository>();
 builder.Services.AddScoped<IUsuarioRepository, UsuariosRepository>();
 builder.Services.AddScoped<IEventosRepository, EventosRepository>();
 builder.Services.AddScoped<IPresencasEventosRepository, PresencasEventosRepository>();
+builder.Services.AddScoped<IComentariosEventosRepository, ComentariosEventosRepository>();
+
 
 //Adiciona o serviço de Controllers
 builder.Services.AddControllers();
